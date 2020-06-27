@@ -29,7 +29,7 @@ doctl auth init --access-token ${DIGITALOCEAN_ACCESS_TOKEN}
 
 Clone the image builder repository if you haven't already.
 
-    $ git clone https://sigs.k8s.io/image-builder.git image-builder
+    $ git clone https://github.com/kubernetes-sigs/image-builder.git image-builder
 
 Change directory to images/capi within the image builder repository
 
@@ -42,7 +42,6 @@ Run the Make target to generate DigitalOcean images.
 Check the image already available in your account.
 
     $ doctl compute image list-user
-
 
 ## Cluster Creation
 
@@ -93,7 +92,7 @@ kubectl --kubeconfig=./${CLUSTER_NAME}.kubeconfig apply -f https://docs.projectc
 Deploy DigitalOcean Cloud Controller Manager
 
 ```bash
-kubectl --kubeconfig=./${CLUSTER_NAME}.kubeconfig apply -f examples/digitalocean-ccm.yaml
+kubectl --kubeconfig=./${CLUSTER_NAME}.kubeconfig apply -f examples/digitalocean-cloud-controller-manager.yaml
 ```
 
 Optional Deploy DigitalOcean CSI
